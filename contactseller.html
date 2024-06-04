@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Seller - Estate Finder</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contact Seller Section -->
+    <section class="contact-seller">
+        <div class="container">
+            <h2 class="text-center mt-5 mb-4">Contact Seller</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="seller-details mb-4">
+                        <h3>Seller Information</h3>
+                        <p><strong>Name:</strong> John Doe</p>
+                        <p><strong>Address:</strong> 123 Sunshine Blvd, Miami, Florida, USA</p>
+                        <p><strong>Phone:</strong> +1 (305) 555-0123</p>
+                        <p><strong>Email:</strong> johndoe@example.com</p>
+                    </div>
+                    <!-- Contact Form -->
+                    <form id="contactForm" action="confirmation.html" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Seller Section -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+
+            // Store form data in localStorage
+            localStorage.setItem('contactName', name);
+            localStorage.setItem('contactEmail', email);
+            localStorage.setItem('contactPhone', phone);
+            localStorage.setItem('contactMessage', message);
+
+            // Redirect to confirmation page
+            window.location.href = 'confirmation.html';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation - Estate Finder</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation">
+        <div class="container">
+            <h2 class="text-center mt-5 mb-4">Confirmation !!!</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <p>Thank you, <span id="confirmName"></span>, for your inquiry!</p>
+                    <p>We have received your message and will contact you shortly at <span id="confirmEmail"></span> or <span id="confirmPhone"></span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Back to Homepage Button -->
+<div class="text-center mt-4">
+    <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+</div>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin-top: 50px;
+        }
+        .confirmation {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        .confirmation h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .confirmation p {
+            font-size: 18px;
+            color: #666;
+        }
+        .confirmation span {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+    </style>
+    <!-- End Confirmation Section -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to retrieve and display confirmation details -->
+    <script>
+        document.getElementById('confirmName').textContent = localStorage.getItem('contactName');
+        document.getElementById('confirmEmail').textContent = localStorage.getItem('contactEmail');
+        document.getElementById('confirmPhone').textContent = localStorage.getItem('contactPhone');
+    </script>
+</body>
+</html>
